@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,12 +8,17 @@ import {
     faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, ChevronDown } from 'lucide-react'
+
 
 const FooterContent = () => {
+    const [isKategoriOpen, setIsKategoriOpen] = useState(false);
+    const [isPerusahaanOpen, setIsPerusahaanOpen] = useState(false);
+    const [isKomunitasOpen, setIsKomunitasOpen] = useState(false);
+
     return (
-        <footer className=" px-6 py-10">
-            <div className="footer-content grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <footer className=" px-6 py-10 w-full bg-white text-gray-800">
+            <div className="footer-content grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:justify-between">
                 {/* Kolom 1: Brand */}
                 <div className="flex flex-col items-start">
                     <img
@@ -25,50 +31,85 @@ const FooterContent = () => {
                     <p className="text-sm">+62-877-7123-1234</p>
                 </div>
 
-                {/* Kolom 2: Kategori */}
-                <div>
-                    <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold mb-2">Kategori</h3>
-                        <ChevronRight className="inline-block md:hidden" />
+                <div className="grid grid-cols-1 md:grid-cols-3">
 
+
+
+                    {/* Kolom 2: Kategori */}
+                    <div>
+                        <div
+                            className="flex items-center justify-between mb-2 cursor-pointer md:cursor-default"
+                            onClick={() => setIsKategoriOpen(!isKategoriOpen)}
+                        >
+                            <h3 className="font-semibold mb-2">Kategori</h3>
+                            {/* Icon hanya muncul di mobile */}
+                            <div className="md:hidden">
+                                {isKategoriOpen ? (
+                                    <ChevronDown />
+                                ) : (
+                                    <ChevronRight />
+                                )}
+                            </div>
+                        </div>
+
+                        <ul className={`space-y-1 text-sm ${isKategoriOpen ? "block" : "hidden"
+                            } md:block`}
+                        >
+                            <li>Digital & Teknologi</li>
+                            <li>Pemasaran</li>
+                            <li>Manajemen Bisnis</li>
+                            <li>Pengembangan Diri</li>
+                            <li>Desain</li>
+                        </ul>
                     </div>
-                    <ul className="space-y-1 text-sm hidden md:block">
-                        <li>Digital & Teknologi</li>
-                        <li>Pemasaran</li>
-                        <li>Manajemen Bisnis</li>
-                        <li>Pengembangan Diri</li>
-                        <li>Desain</li>
-                    </ul>
-                </div>
 
-                {/* Kolom 3: Perusahaan */}
-                <div>
-                    <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold mb-2">Perusahaan</h3>
-                        <ChevronRight className="inline-block md:hidden" />
+                    {/* Kolom 3: Perusahaan */}
+                    <div>
+                        <div className="flex items-center justify-between mb-2"
+                            onClick={() => setIsPerusahaanOpen(!isPerusahaanOpen)}
+                        >
+                            <h3 className="font-semibold mb-2">Perusahaan</h3>
+                            <div className="md:hidden">
+                                {isPerusahaanOpen ? (
+                                    <ChevronDown />
+                                ) : (
+                                    <ChevronRight />
+                                )}
+                            </div>
 
+                        </div>
+                        <ul className={`space-y-1 text-sm ${isPerusahaanOpen ? "block" : "hidden"
+                            } md:block`}>
+                            <li>Tentang Kami</li>
+                            <li>FAQ</li>
+                            <li>Kebijakan Privasi</li>
+                            <li>Ketentuan Layanan</li>
+                            <li>Bantuan</li>
+                            {/* ... */}
+                        </ul>
                     </div>
-                    <ul className="space-y-1 text-sm hidden md:block">
-                        <li>Tentang Kami</li>
-                        <li>FAQ</li>
-                        <li>Kebijakan Privasi</li>
-                        <li>Ketentuan Layanan</li>
-                        <li>Bantuan</li>
-                        {/* ... */}
-                    </ul>
-                </div>
 
-                {/* Kolom 4: Komunitas */}
-                <div>
-                    <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold mb-2">Komunitas</h3>
-                        <ChevronRight className="inline-block md:hidden" />
+                    {/* Kolom 4: Komunitas */}
+                    <div>
+                        <div className="flex items-center justify-between mb-2"
+                            onClick={() => setIsKomunitasOpen(!isKomunitasOpen)}
+                        >
+                            <h3 className="font-semibold mb-2">Komunitas</h3>
+                             <div className="md:hidden">
+                                {isKomunitasOpen ? (
+                                    <ChevronDown />
+                                ) : (
+                                    <ChevronRight />
+                                )}
+                            </div>
 
+                        </div>
+                        <ul className={`space-y-1 text-sm ${isKomunitasOpen ? "block" : "hidden"
+                            } md:block`}>
+                            <li>Tips Sukses</li>
+                            <li>Blog</li>
+                        </ul>
                     </div>
-                    <ul className="space-y-1 text-sm hidden md:block">
-                        <li>Tips Sukses</li>
-                        <li>Blog</li>
-                    </ul>
                 </div>
             </div>
 
