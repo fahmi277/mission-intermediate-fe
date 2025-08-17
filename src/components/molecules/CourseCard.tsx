@@ -8,16 +8,17 @@ type CourseType = {
     courseName: string
     instructorName: string
     instructorJob: string
+    instructorCompany?: string
     rating: number
     reviewCount: number
     price: string
 }
 
-const CourseCard = ({ courseImage, avatarImage, courseName, instructorName, instructorJob, rating, reviewCount, price }: CourseType) => {
+const CourseCard = ({ courseImage, avatarImage, courseName, instructorName, instructorJob, instructorCompany, rating, reviewCount, price }: CourseType) => {
     const ratingStars = useMemo(() => <RatingStars rating={rating} reviewCount={reviewCount} />, [rating, reviewCount]);
 
     return (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-sm w-full mx-auto">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden w-full mx-auto">
 
             <div className="p-4 flex flex-row md:flex-col gap-4 items-center md:items-start">
 
@@ -38,7 +39,11 @@ const CourseCard = ({ courseImage, avatarImage, courseName, instructorName, inst
                         />
                         <div>
                             <h2 className="text-[16px] font-semibold text-gray-800">{instructorName}</h2>
-                            <p className="text-[14px] text-gray-600 mb-3">{instructorJob}</p>
+                            {/* <p className="text-[14px] text-gray-600 mb-3">{instructorJob} di {instructorCompany} </p> */}
+                            <p className="text-[14px] text-gray-600 mb-3">
+                                {instructorJob} di
+                                <span className="font-semibold hidden md:inline"> {instructorCompany}</span>
+                            </p>
                         </div>
                     </div>
 

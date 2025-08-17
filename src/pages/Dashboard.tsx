@@ -10,6 +10,8 @@ import avatarImage from "../data/avatarImage"; // import avatarImage from the co
 import { RatingStars } from "../components/molecules/RatingStars"; // import RatingStars component
 
 import CourseCard from "../components/molecules/CourseCard";
+import BannerCard from "../components/molecules/BannerCard";
+import FooterContent from "../components/molecules/FooterContent";
 
 
 
@@ -18,8 +20,7 @@ import CourseCard from "../components/molecules/CourseCard";
 const Dashboard: React.FC = () => {
     const randomImage = useMemo(() => {
         const index = Math.floor(Math.random() * courseImage.length)
-        console.log("Random Image Index:", index);
-        
+
         return courseImage[index]
     }, [])
     const randomAvatar = useMemo(() => {
@@ -27,9 +28,7 @@ const Dashboard: React.FC = () => {
         return avatarImage[index]
     }, [])
 
-    const dataImage = randomImage;
-    console.log("Image Data:", dataImage);
-    
+
 
     return (
         <div>
@@ -91,62 +90,33 @@ const Dashboard: React.FC = () => {
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    {/* Contoh Kartu Video Course */}
-                    
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-sm w-full mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
 
-                        <div className="p-4 flex flex-row md:flex-col gap-4 items-center md:items-start">
-
-                            <img
-                                src={randomImage}
-                                alt="Course Thumbnail"
-                                className="w-[82px] h-[82px] md:w-[344px] md:h-[193px] rounded-md object-cover"
+                    {
+                        // Generate multiple CourseCard components with random images and avatars
+                        Array.from({ length: 9 }).map((_, index) => (
+                            <CourseCard
+                                key={index}
+                                courseImage={courseImage[index]}
+                                avatarImage={avatarImage[index]}
+                                courseName="Big 4 Auditor Financial Analyst"
+                                instructorName="Jenna Ortega"
+                                instructorJob="Senior Accountant"
+                                instructorCompany="Harisenin"
+                                rating={(index % 5) + 3} // Example rating from 1 to 5
+                                reviewCount={120}
+                                price={`Rp ${(100 +
+                                    Math.floor(Math.random() * 5) * 150).toLocaleString()} K`} // Example price variation
                             />
+                        ))
+                    }
 
-                            <div>
-                                <h3 className="font-semibold text-[16px] mb-1">Big 4 Auditor Financial Analyst</h3>
-
-                                <div className="flex flex-row items-center gap-2 mb-2">
-                                    <img
-                                        src={randomAvatar}
-                                        alt="Avatar"
-                                        className="w-[40px] h-[40px] rounded-sm object-cover"
-                                    />
-                                    <div>
-                                        <h2 className="text-[16px] font-semibold text-gray-800">Jenna Ortega</h2>
-                                        <p className="text-[14px] text-gray-600 mb-3">Senior Accountant</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                        {/* Image */}
-
-
-                        {/* Content */}
-                        <div className="px-4 mb-4 flex flex-row gap-4 justify-between items-center">
-
-                            <RatingStars rating={2.5} reviewCount={86} className="mb-2" />
-                            <div className="text-green-600 font-semibold text-lg">Rp 300K</div>
-                        </div>
-                    </div>
-
-                    <CourseCard
-                        courseImage={randomImage}
-                        avatarImage={randomAvatar}
-                        courseName="Big 4 Auditor Financial Analyst"
-                        instructorName="Jenna Ortega"
-                        instructorJob="Senior Accountant"
-                        rating={2.5}
-                        reviewCount={86}
-                        price="Rp 300K"
-                    />
-
-                    {/* Tambahkan lebih banyak kartu video course sesuai kebutuhan */}
                 </div>
+
+                <BannerCard heading="Mau Belajar Lebih Banyak ?" subheading="Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari program-program terbaik harisenin.com" />
+
+                <FooterContent />
+
             </div>
 
 
