@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CoursePromoBanner: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="relative rounded-xl shadow-lg overflow-hidden p-6 mb-6 w-full md:min-w-[350px] bg-white">
             {/* Header */}
@@ -18,7 +20,7 @@ const CoursePromoBanner: React.FC = () => {
                 <div className="text-sm text-blue-600 font-medium">Penawaran berlaku 2 hari lagi</div>
                 <button
                     className="w-full bg-[#3ECF4C] hover:bg-green-600 text-white text-sm font-semibold py-2 px-6 rounded-xl transition duration-300"
-                    onClick={() => window.location.href = '/checkout'} // Ganti sesuai rute
+                    onClick={() => navigate('/payment-methode')} // Ganti sesuai rute
                 >
                     Beli Sekarang
                 </button>
