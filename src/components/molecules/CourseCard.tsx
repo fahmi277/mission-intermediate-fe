@@ -12,13 +12,19 @@ type CourseType = {
     rating: number
     reviewCount: number
     price: string
+    onClick?: () => void // Optional click handler
 }
 
-const CourseCard = ({ courseImage, avatarImage, courseName, instructorName, instructorJob, instructorCompany, rating, reviewCount, price }: CourseType) => {
+const CourseCard = ({ courseImage, avatarImage, courseName, instructorName, instructorJob, instructorCompany, rating, reviewCount, price, onClick }: CourseType) => {
     const ratingStars = useMemo(() => <RatingStars rating={rating} reviewCount={reviewCount} />, [rating, reviewCount]);
 
+
     return (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden w-full mx-auto">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden w-full mx-auto"
+            onClick={() => {
+                if (onClick) onClick(); // Call the onClick handler if provided
+            }}>
+            {/* Image */}
 
             <div className="p-4 flex flex-row md:flex-col gap-4 items-center md:items-start">
 
