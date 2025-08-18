@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import {colors} from './src/styles/colors';
+
 export default {
   content: [
     "./index.html",
@@ -17,6 +20,16 @@ export default {
       animation: {
         'spin-slow': 'spin 3s linear infinite', // 3s instead of 1s
       },
+      colors:{
+        primary:{
+          DEFAULT: colors.primary,
+          400: colors.primary400,
+          300: colors.primary300,
+          200: colors.primary200,
+          100: colors.primary100
+
+        }
+      }
 
 
 
