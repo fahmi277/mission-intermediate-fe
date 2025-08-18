@@ -1,5 +1,6 @@
 import React from "react";
 import { useMemo } from 'react'
+import { useNavigate } from "react-router-dom";
 
 
 import { AlignJustify, Star, StarHalf, StarOff } from "lucide-react"
@@ -28,6 +29,8 @@ const Dashboard: React.FC = () => {
         return avatarImage[index]
     }, [])
 
+    const navigate = useNavigate();
+
 
 
     return (
@@ -50,8 +53,13 @@ const Dashboard: React.FC = () => {
                                 Revolusi <br /> Pembelajaran: <br />
                                 Temukan Ilmu Baru melalui Platform Video Interaktif!
                             </span>
-                            <span className="hidden md:inline">
+
+                            <span className="hidden md:inline"
+                               
+                            >
+
                                 Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!
+
                             </span>
                         </h2>
 
@@ -59,7 +67,8 @@ const Dashboard: React.FC = () => {
                             Temukan ilmu baru yang menarik dan mendalam melalui koleksi video pembelajaran berkualitas tinggi. Tidak hanya itu, <br className="hidden md:inline" /> Anda juga dapat berpartisipasi dalam latihan interaktif yang akan meningkatkan pemahaman Anda.
                         </p>
 
-                        <button className="bg-[#3ECF4C] hover:bg-green-700 text-sm text-white py-2 px-6 rounded-md transition duration-300">
+                        <button className="bg-[#3ECF4C] hover:bg-green-700 text-sm text-white py-2 px-6 rounded-md transition duration-300"
+                         onClick={() => navigate("/all-products")}>
                             Temukan Video Course untuk Dipelajari!
                         </button>
                     </div>

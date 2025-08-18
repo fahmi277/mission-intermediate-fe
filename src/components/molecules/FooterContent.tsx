@@ -26,7 +26,7 @@ const FooterContent = () => {
                         alt="Videobelajar Logo"
                         className="h-[42px] w-[152px] md:h-[56px] md:w-[237px]"
                     />
-                    <p className="text-sm mb-2">Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id</p>
+                    <p className="text-sm font-bold mb-2">Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id</p>
                     <p className="text-sm">Jl. Usman Effendi No. 50 Lowokwaru, Malang </p>
                     <p className="text-sm">+62-877-7123-1234</p>
                 </div>

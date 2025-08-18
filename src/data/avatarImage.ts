@@ -10,4 +10,6 @@ const avatarImage = [
   "images/avatar/avatar9.png",
 ];
 
+
+
 export default avatarImage;
