@@ -6,6 +6,8 @@ import Dashboard from './pages/Dashboard'
 import AllProducts from './pages/AllProducts'
 import DetailProduct from './pages/DetailProduct'
 
+import PaymentPage from './pages/PaymentPage'
+
 function App() {
   return (
 
@@ -16,6 +18,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/all-products" element={<AllProducts />} />
       <Route path="/detail-product" element={<DetailProduct />} />
+      <Route path="/payment-methode" element={<PaymentPage />} />
     </Routes>
 
   )
