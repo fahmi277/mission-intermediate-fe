@@ -16,23 +16,23 @@ export default class PaymentPage extends Component {
             <div className="flex flex-row items-center justify-between p-3">
               <p className="text-gray px-2">Selesaikan pesanan dalam</p>
               <button className="bg-[#f54720] text-white px-2 py-1 rounded-md">
-                    00
+                00
               </button>
               <p>:</p>
               <button className="bg-[#f54720] text-white px-2 py-1 rounded-md">
-                    00
+                00
               </button>
               <p>:</p>
               <button className="bg-[#f54720] text-white px-2 py-1 rounded-md">
-                    00
+                00
               </button>
             </div>
           </div>
         </div>
         <div className="px-4">
 
-        <PaymentProgress currentStep="pay" />
-        <CoursePromoBanner isBanner={true} />
+          <PaymentProgress currentStep="pay" />
+          <CoursePromoBanner isBanner={true} />
         </div>
       </div>
     );
