@@ -1,10 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CoursePromoBanner: React.FC = () => {
+type CoursePromoBannerProps = {
+    isBanner?: boolean;
+};
+
+const CoursePromoBanner: React.FC<CoursePromoBannerProps> = ({ isBanner = true }) => {
     const navigate = useNavigate();
     return (
-        <div className="relative rounded-xl shadow-lg overflow-hidden p-6 mb-6 w-full md:min-w-[350px] bg-white">
+        <div className="relative rounded-xl shadow-lg overflow-hidden p-6 w-full md:min-w-[350px] bg-white">
             {/* Header */}
             <h2 className="text-[18px] font-bold leading-snug mb-4">
                 Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager
@@ -18,12 +22,16 @@ const CoursePromoBanner: React.FC = () => {
                 </div>
                 <div className="bg-green-500 text-white text-sm px-3 py-1 rounded-full font-semibold">Diskon 50%</div>
                 <div className="text-sm text-blue-600 font-medium">Penawaran berlaku 2 hari lagi</div>
-                <button
+
+                {isBanner && (
+                                    <button
                     className="w-full bg-[#3ECF4C] hover:bg-green-600 text-white text-sm font-semibold py-2 px-6 rounded-xl transition duration-300"
                     onClick={() => navigate('/payment-methode')} // Ganti sesuai rute
                 >
                     Beli Sekarang
                 </button>
+                )}
+
             </div>
 
             {/* Features */}

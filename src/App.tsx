@@ -5,8 +5,9 @@ import Page from './pages/Payment'
 import Dashboard from './pages/Dashboard'
 import AllProducts from './pages/AllProducts'
 import DetailProduct from './pages/DetailProduct'
-
 import PaymentPage from './pages/PaymentPage'
+
+import MethodePaymentPage from './pages/MethodePaymentPage'
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/all-products" element={<AllProducts />} />
       <Route path="/detail-product" element={<DetailProduct />} />
-      <Route path="/payment-methode" element={<PaymentPage />} />
+      <Route path="/payment-methode" element={<MethodePaymentPage />} />
+      <Route path="/payment-page" element={<PaymentPage />} />
     </Routes>
 
   )

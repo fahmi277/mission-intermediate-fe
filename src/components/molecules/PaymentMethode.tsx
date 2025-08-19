@@ -60,7 +60,7 @@ const PaymentMethode = () => {
 
     return (
         <div className="flex justify-center items-start font-sans md:min-w-[800px] w-full">
-            <div className="w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
+            <div className="w-full bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
                 <div className="p-6 bg-gray-50 border-b border-gray-200">
                     <h1 className="text-xl font-bold text-gray-800">Metode Pembayaran</h1>
                 </div>
