@@ -19,7 +19,7 @@ export default function PaymentProgress({ currentStep }: PaymentProgressProps) {
   };
 
   return (
-    <div className="flex justify-between items-center max-w-md mx-auto mt-6">
+    <div className="flex justify-between items-center max-w-md mx-auto px-1">
       {steps.map((step, idx) => {
         const status = getStatus(step.key);
         const isLast = idx === steps.length - 1;
@@ -27,14 +27,14 @@ export default function PaymentProgress({ currentStep }: PaymentProgressProps) {
         return (
           <div key={step.key} className="flex items-center">
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold
+              className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold
                 ${status === "done" ? "bg-green-600" : status === "active" ? "bg-green-500" : "bg-gray-300"}
               `}
             >
               {status === "done" ? "✓" : idx + 1}
             </div>
             <span className="ml-2 text-sm text-gray-700">{step.label}</span>
-            {!isLast && <div className="mx-1 h-0.5 w-6 bg-gray-300" />}
+            {!isLast && <div className="mx-2 h-0.5 w-6 bg-gray-300" />}
           </div>
         );
       })}
