@@ -9,21 +9,23 @@ import { useNavigate } from "react-router-dom";
 const MethodePaymentPage = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className=" px-4 ">
       <HeaderDashboard />
-            <div className="flex flex-col-reverse md:flex-row gap-6 w-full max-w-7xl mx-auto px-4 ">
-            <div>
-                <PaymentMethode />
-                <OrderSummaryCard />
-            </div>
-            <div className="w-full md:max-w-[200px]">
-                <CoursePromoBanner isBanner={false} />
-            </div>
-            </div>
+      <div>
+        <div className="flex flex-col-reverse md:flex-row gap-6 w-full mx-auto">
+          <div className="w-full">
+            <PaymentMethode />
+            <OrderSummaryCard />
+          </div>
+          <div className="w-full md:max-w-md">
+            <CoursePromoBanner isBanner={false} />
+          </div>
+        </div>
 
-            <FooterContent />
+        <FooterContent />
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default MethodePaymentPage;

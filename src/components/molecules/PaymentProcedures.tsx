@@ -14,7 +14,7 @@ interface PaymentCategory {
 }
 
 // Main App component
-const PaymentMethode = () => {
+const PaymentProcedures = () => {
     const [openCategory, setOpenCategory] = useState<string | null>('Transfer Bank');
     const [selectedMethod, setSelectedMethod] = useState<string>('bca');
 
@@ -62,7 +62,7 @@ const PaymentMethode = () => {
         <div className=" font-sans w-full ">
             <div className="w-full h-[400px] bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
                 <div className="p-2 bg-gray-50 border-b border-gray-200">
-                    <h1 className="text-xl font-bold text-gray-800">Metode Pembayaran</h1>
+                    <h1 className="text-xl font-bold text-gray-800">Tata Cara Pembayaran</h1>
                 </div>
 
                 <div className="p-4 space-y-4 flex flex-col justify-center items-center">
@@ -125,4 +125,4 @@ const PaymentMethode = () => {
     );
 };
 
-export default PaymentMethode;
+export default PaymentProcedures;

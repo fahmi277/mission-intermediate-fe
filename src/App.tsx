@@ -8,6 +8,8 @@ import DetailProduct from './pages/DetailProduct'
 import PaymentPage from './pages/PaymentPage'
 
 import MethodePaymentPage from './pages/MethodePaymentPage'
+import PaymentCompleted from './pages/PaymentCompleted'
+import PaymentPending from './components/molecules/PaymentPending'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Route path="/detail-product" element={<DetailProduct />} />
       <Route path="/payment-methode" element={<MethodePaymentPage />} />
       <Route path="/payment-page" element={<PaymentPage />} />
+      <Route path="/payment-completed" element={<PaymentCompleted />} />
+      <Route path="/payment-pending" element={<PaymentPending />} />
     </Routes>
 
   )

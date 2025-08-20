@@ -1,6 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PaymentCard: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handlePayment = () => {
+    // Simulate payment processing
+    setTimeout(() => {
+      navigate("/payment-completed");
+    }, 2000);
+  };
+
   return (
     <div className="w-full bg-white rounded-lg shadow-md border border-gray-200 p-5">
       {/* Header */}
@@ -51,7 +61,9 @@ const PaymentCard: React.FC = () => {
         <button className="w-full text-green-500 py-2 rounded-md border border-green-500 hover:bg-[#fff5f2] transition">
           Ganti Metode Pembayaran
         </button>
-        <button className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-[#d63e1c] transition">
+        <button className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-[#d63e1c] transition"
+        onClick={handlePayment}
+        >
           Bayar Sekarang
         </button>
       </div>
