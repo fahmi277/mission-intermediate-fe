@@ -19,7 +19,7 @@ export default function PaymentProgress({ currentStep }: PaymentProgressProps) {
   };
 
   return (
-    <div className="flex justify-between items-center max-w-md mx-auto px-1">
+    <div className="flex justify-between items-center max-w-md mx-auto px-1 mb-4">
       {steps.map((step, idx) => {
         const status = getStatus(step.key);
         const isLast = idx === steps.length - 1;

@@ -8,7 +8,7 @@ type CoursePromoBannerProps = {
 const CoursePromoBanner: React.FC<CoursePromoBannerProps> = ({ isBanner = true }) => {
     const navigate = useNavigate();
     return (
-        <div className="relative rounded-xl shadow-lg overflow-hidden p-6 w-full md:min-w-[350px] bg-white">
+        <div className="relative rounded-xl shadow-lg overflow-hidden p-6 w-full md:max-w-[350px] bg-white">
             {/* Header */}
             <h2 className="text-[18px] font-bold leading-snug mb-4">
                 Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager
