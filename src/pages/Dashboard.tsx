@@ -116,6 +116,7 @@ const Dashboard: React.FC = () => {
                                 reviewCount={120}
                                 price={`Rp ${(100 +
                                     Math.floor(Math.random() * 5) * 150).toLocaleString()} K`} // Example price variation
+                                onClick={() => navigate("/detail-product")}
                             />
                         ))
                     }

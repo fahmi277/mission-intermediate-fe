@@ -4,7 +4,7 @@ import PaymentProgress from "../components/molecules/PaymentProgress";
 import CourseCard from "../components/molecules/CourseCard";
 import BannerCard from "../components/molecules/BannerCard";
 import CoursePromoBanner from "../components/molecules/CoursePromoBanner";
-import OrderCountdown from "../components/molecules/OrderCountDown";
+import OrderCountdown from "../components/molecules/OrderCountdown";
 import PaymentCard from "../components/molecules/PaymentCard";
 import PaymentMethode from "../components/molecules/PaymentMethode";
 import PaymentProcedures from "../components/molecules/PaymentProcedures";

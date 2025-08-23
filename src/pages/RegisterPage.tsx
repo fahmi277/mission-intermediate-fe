@@ -32,7 +32,7 @@ const RegisterPage: React.FC<AuthCardProps> = ({ heading, subheading, mode, onSu
 
 
 
-            <div className="min-h-[calc(100vh-90px)] w-screen  flex items-center justify-center md:py-8 px-4 md:h-[617px]">
+            <div className="min-h-[calc(100vh-90px)] w-screen  flex items-center justify-center md:py-8 px-4">
 
 
                 <div className="bg-white py-9 px-6 rounded-lg shadow-lg w-full max-w-[590px] h-full">
