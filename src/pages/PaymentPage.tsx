@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import HeaderDashboard from "../components/HeaderDashboard";
 import PaymentProgress from "../components/molecules/PaymentProgress";
 // import CourseCard from "../components/molecules/CourseCard";
@@ -9,10 +9,9 @@ import PaymentCard from "../components/molecules/PaymentCard";
 // import PaymentMethode from "../components/molecules/PaymentMethode";
 import PaymentProcedures from "../components/molecules/PaymentProcedures";
 
-export default class PaymentPage extends Component {
-  render() {
-    return (
-      <div className="w-full">
+const PaymentPage = () => {
+  return (
+    <div className="w-full">
         <HeaderDashboard />
 
         <OrderCountdown hours="14" minutes="39" seconds="51" />
@@ -33,4 +32,5 @@ export default class PaymentPage extends Component {
       </div>
     );
   }
-}
+
+  export default PaymentPage;

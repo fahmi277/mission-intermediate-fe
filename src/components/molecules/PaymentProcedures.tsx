@@ -1,40 +1,40 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Helper: format to Indonesian Rupiah without decimals
-const formatIDR = (n: number) =>
-  new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(n);
+// const formatIDR = (n: number) =>
+//   new Intl.NumberFormat("id-ID", {
+//     style: "currency",
+//     currency: "IDR",
+//     minimumFractionDigits: 0,
+//     maximumFractionDigits: 0,
+//   }).format(n);
 
-// Helper: split VA like "11739 081234567890"
-const chunkVA = (va: string) => va.replace(/\s/g, "").replace(/(.{5})(.*)/, "$1 $2");
+// // Helper: split VA like "11739 081234567890"
+// const chunkVA = (va: string) => va.replace(/\s/g, "").replace(/(.{5})(.*)/, "$1 $2");
 
 // Simple step indicator dot
-const StepDot: React.FC<{ state: "done" | "active" | "todo"; label: string }>
-  = ({ state, label }) => {
-  const styles = {
-    done: "bg-green-500 text-white",
-    active: "border-2 border-green-500 text-green-700",
-    todo: "bg-gray-200 text-gray-500",
-  } as const;
-  return (
-    <div className="flex items-center gap-2">
-      <div
-        className={`h-6 w-6 rounded-full flex items-center justify-center text-xs font-semibold ${
-          state === "done" ? styles.done : state === "active" ? styles.active : styles.todo
-        }`}
-      >
-        {state === "done" ? "✓" : state === "active" ? "2" : "3"}
-      </div>
-      <span className={`text-sm ${state === "active" ? "text-green-700" : "text-gray-600"}`}>
-        {label}
-      </span>
-    </div>
-  );
-};
+// const StepDot: React.FC<{ state: "done" | "active" | "todo"; label: string }>
+//   = ({ state, label }) => {
+//   const styles = {
+//     done: "bg-green-500 text-white",
+//     active: "border-2 border-green-500 text-green-700",
+//     todo: "bg-gray-200 text-gray-500",
+//   } as const;
+//   return (
+//     <div className="flex items-center gap-2">
+//       <div
+//         className={`h-6 w-6 rounded-full flex items-center justify-center text-xs font-semibold ${
+//           state === "done" ? styles.done : state === "active" ? styles.active : styles.todo
+//         }`}
+//       >
+//         {state === "done" ? "✓" : state === "active" ? "2" : "3"}
+//       </div>
+//       <span className={`text-sm ${state === "active" ? "text-green-700" : "text-gray-600"}`}>
+//         {label}
+//       </span>
+//     </div>
+//   );
+// };
 
 // Accordion item
 const AccordionItem: React.FC<{
@@ -65,19 +65,19 @@ const AccordionItem: React.FC<{
 };
 
 
-const BannerTimer: React.FC<{ seconds: number }> = ({ seconds }) => {
-  const hh = String(Math.floor(seconds / 3600)).padStart(2, "0");
-  const mm = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-  const ss = String(seconds % 60).padStart(2, "0");
-  return (
-    <div className="w-full bg-amber-50 border border-amber-100 text-amber-800 rounded-xl p-3 flex items-center justify-between">
-      <span className="text-sm">Selesaikan pemesanan dalam</span>
-      <span className="font-semibold tabular-nums bg-white/70 rounded-md px-2 py-1 border border-amber-200">
-        {hh} : {mm} : {ss}
-      </span>
-    </div>
-  );
-};
+// const BannerTimer: React.FC<{ seconds: number }> = ({ seconds }) => {
+//   const hh = String(Math.floor(seconds / 3600)).padStart(2, "0");
+//   const mm = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+//   const ss = String(seconds % 60).padStart(2, "0");
+//   return (
+//     <div className="w-full bg-amber-50 border border-amber-100 text-amber-800 rounded-xl p-3 flex items-center justify-between">
+//       <span className="text-sm">Selesaikan pemesanan dalam</span>
+//       <span className="font-semibold tabular-nums bg-white/70 rounded-md px-2 py-1 border border-amber-200">
+//         {hh} : {mm} : {ss}
+//       </span>
+//     </div>
+//   );
+// };
 
 
 const HowToPay: React.FC = () => {
