@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Dashboard from './pages/Dashboard';
@@ -12,8 +12,7 @@ import OrderHistory from './pages/OrderHistory';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <Routes>
         <Route
           path="/"
           element={
@@ -55,8 +54,7 @@ function App() {
         <Route path="/payment-completed" element={<PaymentCompleted />} />
         <Route path="/payment-pending" element={<PaymentPending />} />
         <Route path="/order-history" element={<OrderHistory />} />
-      </Routes>
-    </BrowserRouter>
+  </Routes>
   );
 }
 
