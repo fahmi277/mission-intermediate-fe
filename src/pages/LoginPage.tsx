@@ -19,6 +19,33 @@ const LoginPage: React.FC<AuthCardProps> = ({
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  //   add state for handle input form
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  //  submit handler
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validasi email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Format email tidak valid");
+      return;
+    }
+
+    // Validasi password minimal 6 karakter
+    if (password.length < 6) {
+      alert("Password minimal 6 karakter");
+      return;
+    }
+
+    // ✅ Jika lolos validasi
+    console.log("Email:", email);
+    console.log("Password:", password);
+    navigate("/dashboard");
+  };
+
   // const togglePasswordVisibility = () => {
   //     setShowPassword(!showPassword)
   // }
@@ -39,7 +66,7 @@ const LoginPage: React.FC<AuthCardProps> = ({
             <p className="text-gray-600 mb-6">{subheading}</p>
           </div>
 
-          <form className="space-y-6 w-full text-left" onSubmit={onSubmit}>
+          <form className="space-y-6 w-full text-left" onSubmit={handleSubmit}>
             {/* Email */}
             <div className="w-full">
               <label
@@ -53,6 +80,8 @@ const LoginPage: React.FC<AuthCardProps> = ({
                 id="email"
                 name="email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 placeholder="you@example.com"
               />
@@ -71,6 +100,8 @@ const LoginPage: React.FC<AuthCardProps> = ({
                 id="password"
                 name="password"
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 pr-10 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 placeholder="••••••••"
               />
@@ -97,7 +128,7 @@ const LoginPage: React.FC<AuthCardProps> = ({
                   type="submit"
                   className="w-full bg-[#3ECF4C] text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-200 mb-4"
                   onClick={() => {
-                    navigate("/dashboard");
+                    // navigate("/dashboard");
                   }}
                 >
                   Masuk
