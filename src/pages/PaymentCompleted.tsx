@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import HeaderDashboard from "../components/HeaderDashboard";
+// import React, { Component } from "react";
+// import HeaderDashboard from "../components/HeaderDashboard";
 import Logo from "../components/molecules/Logo";
 import MoreMenu from "../components/molecules/More";
 import PaymentProgress from "../components/molecules/PaymentProgress";

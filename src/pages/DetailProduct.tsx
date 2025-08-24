@@ -1,8 +1,8 @@
 import HeaderDashboard from "../components/HeaderDashboard";
 import { useNavigate } from "react-router-dom";
-import React from "react";
+// import React from "react";
 import Breadcrumb from "../components/molecules/Breadcrumb";
-import BannerCard from "../components/molecules/BannerCard";
+// import BannerCard from "../components/molecules/BannerCard";
 import { RatingStars } from "../components/molecules/RatingStars"; // Assuming you have a component for displaying stars
 import CoursePromoBanner from "../components/molecules/CoursePromoBanner";
 import CourseDescription from "../components/molecules/CourseDescription";

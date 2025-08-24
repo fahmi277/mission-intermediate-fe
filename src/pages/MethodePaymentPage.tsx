@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import PaymentMethode from "../components/molecules/PaymentMethode";
 import CoursePromoBanner from "../components/molecules/CoursePromoBanner";
 import OrderSummaryCard from "../components/molecules/OrderSummary";

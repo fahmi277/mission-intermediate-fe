@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useMemo } from 'react';
 import { RatingStars } from './RatingStars';
 

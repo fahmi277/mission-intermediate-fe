@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import HeaderDashboard from "../components/HeaderDashboard";
 import PaymentProgress from "../components/molecules/PaymentProgress";
-import CourseCard from "../components/molecules/CourseCard";
-import BannerCard from "../components/molecules/BannerCard";
+// import CourseCard from "../components/molecules/CourseCard";
+// import BannerCard from "../components/molecules/BannerCard";
 import CoursePromoBanner from "../components/molecules/CoursePromoBanner";
 import OrderCountdown from "../components/molecules/OrderCountdown";
 import PaymentCard from "../components/molecules/PaymentCard";
-import PaymentMethode from "../components/molecules/PaymentMethode";
+// import PaymentMethode from "../components/molecules/PaymentMethode";
 import PaymentProcedures from "../components/molecules/PaymentProcedures";
 
 export default class PaymentPage extends Component {

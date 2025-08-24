@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Interfaces should be defined before the component
 interface PaymentMethod {

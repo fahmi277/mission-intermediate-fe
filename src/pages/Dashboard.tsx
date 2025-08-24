@@ -3,12 +3,12 @@ import { useMemo } from 'react'
 import { useNavigate } from "react-router-dom";
 
 
-import { AlignJustify, Star, StarHalf, StarOff } from "lucide-react"
+// import { AlignJustify, Star, StarHalf, StarOff } from "lucide-react"
 import HeaderDashboard from "../components/HeaderDashboard";
 import courseImage from '../data/courseImage'; // import courseImage from the correct path
 import avatarImage from "../data/avatarImage"; // import avatarImage from the correct path
 
-import { RatingStars } from "../components/molecules/RatingStars"; // import RatingStars component
+// import { RatingStars } from "../components/molecules/RatingStars"; // import RatingStars component
 
 import CourseCard from "../components/molecules/CourseCard";
 import BannerCard from "../components/molecules/BannerCard";
@@ -19,15 +19,15 @@ import FooterContent from "../components/molecules/FooterContent";
 
 
 const Dashboard: React.FC = () => {
-    const randomImage = useMemo(() => {
-        const index = Math.floor(Math.random() * courseImage.length)
+    // const randomImage = useMemo(() => {
+    //     const index = Math.floor(Math.random() * courseImage.length)
 
-        return courseImage[index]
-    }, [])
-    const randomAvatar = useMemo(() => {
-        const index = Math.floor(Math.random() * avatarImage.length)
-        return avatarImage[index]
-    }, [])
+    //     return courseImage[index]
+    // }, [])
+    // const randomAvatar = useMemo(() => {
+    //     const index = Math.floor(Math.random() * avatarImage.length)
+    //     return avatarImage[index]
+    // }, [])
 
     const navigate = useNavigate();
 

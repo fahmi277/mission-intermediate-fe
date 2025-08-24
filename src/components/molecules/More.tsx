@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronRight, AlignJustify, X, LogOut } from "lucide-react";
+import { AlignJustify, X, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 
