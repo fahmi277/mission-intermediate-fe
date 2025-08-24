@@ -12,7 +12,7 @@ export default function OrderSummaryCard() {
   const total = price + adminFee;
 
   return (
-    <div className=" mx-auto mt-8 p-6 bg-white rounded-lg shadow-md border">
+    <div className=" mx-auto mt-8 p-6 bg-white rounded-lg shadow-2xl border">
       <h2 className="text-lg font-bold text-gray-800 mb-4">
         Ringkasan Pesanan
       </h2>

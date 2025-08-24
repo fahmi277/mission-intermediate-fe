@@ -59,15 +59,15 @@ const PaymentMethode = () => {
     };
 
     return (
-        <div className="flex justify-center items-start font-sans md:min-w-[800px] w-full">
-            <div className="w-full bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-                <div className="p-6 bg-gray-50 border-b border-gray-200">
+        <div className=" font-sans w-full ">
+            <div className="w-full h-auto bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <div className="p-2 bg-gray-50 border-b border-gray-200">
                     <h1 className="text-xl font-bold text-gray-800">Metode Pembayaran</h1>
                 </div>
 
-                <div className="p-4 space-y-4">
+                <div className="p-4 space-y-4 flex flex-col justify-center items-center">
                     {paymentCategories.map(category => (
-                        <div key={category.id} className="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div key={category.id} className="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden shadow-sm w-full">
                             <button
                                 className="w-full flex justify-between items-center p-4 focus:outline-none hover:bg-gray-100 transition-colors"
                                 onClick={() => handleToggle(category.name)}

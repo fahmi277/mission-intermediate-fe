@@ -27,7 +27,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
                                         {item.label}
                                     </Link>
                                 ) : (
-                                    <span className="text-gray-800 font-semibold">{item.label}</span>
+                                    <span className="text-gray-800 font-semibold ">{item.label}</span>
                                 )}
                                 {!isLast && <ChevronRight className="w-4 h-4 text-gray-400" />}
                             </li>

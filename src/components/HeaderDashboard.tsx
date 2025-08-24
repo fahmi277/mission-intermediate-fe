@@ -1,20 +1,31 @@
 import { AlignJustify } from "lucide-react";
 import MoreMenu from "./molecules/More";
+import PaymentProgress from "./molecules/PaymentProgress";
 
+type HeaderDashboardProps = {
+  isPaymentPage?: boolean;
+  isPaymentCompleted?: boolean;
+};
 
+const HeaderDashboard: React.FC<HeaderDashboardProps> = ({
+  isPaymentPage = false,
+  isPaymentCompleted = false,
+}) => {
+  return (
+    <>
+      <div className="h-[74px] w-full flex bg-white items-center justify-between px-4">
+        <img
+          src="../src/assets/logo.png"
+          alt="Videobelajar Logo"
+          className="h-[42px] w-[152px] ml-[24px] md:h-[56px] md:w-[237px] md:ml-[120px]"
+        />
+        {isPaymentCompleted && <PaymentProgress currentStep="done" />}
 
-const HeaderDashboard: React.FC = () => {
-    return (
-        <div className="h-[74px] w-full bg-white flex items-center justify-between px-4">
-            <img
-                src="../src/assets/logo.png"
-                alt="Videobelajar Logo"
-                className="h-[42px] w-[152px] ml-[24px] md:h-[56px] md:w-[237px] md:ml-[120px]"
-            />
-            {/* <AlignJustify className="w-6 h-6 text-gray-600 cursor-pointer" /> */}
-            <MoreMenu />
-        </div>
-    );
-}
+        {!isPaymentCompleted && !isPaymentPage && <MoreMenu />}
 
-export default HeaderDashboard
+      </div>
+    </>
+  );
+};
+
+export default HeaderDashboard;

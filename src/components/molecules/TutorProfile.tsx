@@ -44,7 +44,7 @@ const TutorProfile = () => {
     <div className="bg-white rounded-lg shadow-md p-6 text-[#333] w-full md:max-h-[600px] mt-4">
       <div className="">
       <h2 className="text-[18px] font-semibold mt-6">Belajar bersama Tutor Profesional</h2>
-        <div className='flex flex-row gap-4'>
+        <div className='flex flex-col lg:flex-row gap-4'>
 
           <TutorCard {...tutorInfo} />
           <TutorCard {...tutorInfo} />

@@ -8,56 +8,69 @@ import CoursePromoBanner from "../components/molecules/CoursePromoBanner";
 import CourseDescription from "../components/molecules/CourseDescription";
 import TutorProfile from "../components/molecules/TutorProfile";
 
-
 const DetailProduct = () => {
-    const navigate = useNavigate();
-    return (
-        <div>
+  const navigate = useNavigate();
+  return (
+    <div>
+      <HeaderDashboard />
 
-            <HeaderDashboard />
+      <div className="container px-4 mx-auto w-full bg-[##fffdf2]">
+        <Breadcrumb
+          items={[
+            { label: "Beranda", href: "/" },
+            { label: "Desain", href: "/dashboard" },
+            { label: "Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager." }, // Aktif, tidak ada href
+          ]}
+        />
+        <div className="relative min-h-[400px] bg-dashboard bg-cover bg-no-repeat text-white shadow-md rounded-lg overflow-hidden flex justify-left text-left mb-6">
+          {/* Overlay hanya di gambar */}
+          <div className="absolute inset-0 bg-black opacity-80 z-0 rounded-lg" />
 
+          {/* Konten di atas overlay */}
+          <div className="w-full relative z-10 py-[24px] md:py-[20px] flex flex-col items-start text-left px-5 md:px-10  justify-center">
+            <h2 className="text-[24px] md:text-[48px] font-semibold mb-3 max-w-[240px] md:max-w-[900px] leading-snug">
+              <span className="block md:hidden justify-left">
+                Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product
+                Manager.
+              </span>
 
+              <span className="hidden md:inline">
+                Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product
+                Manager.
+              </span>
+            </h2>
 
-            <div className="container px-4 mx-auto w-full bg-[##fffdf2]">
-                <Breadcrumb
-                    items={[
-                        { label: 'Home', href: '/' },
-                        { label: 'Courses', href: '/courses' },
-                        { label: 'React Fundamentals' }, // Aktif, tidak ada href
-                    ]}
-                />
-                <h1 className="text-2xl font-bold mb-4">Detail Product</h1>
-                <div className="relative min-h-[400px] bg-dashboard bg-cover bg-no-repeat text-white shadow-md rounded-lg overflow-hidden flex justify-left text-left mb-6">
-                    {/* Overlay hanya di gambar */}
-                    <div className="absolute inset-0 bg-black opacity-80 z-0 rounded-lg" />
+            <p className="text-white text-[14px] md:text-[16px] mb-6">
+              Belajar bersama tutor profesional di Video Course. Kapanpun, di
+              manapun.
+            </p>
 
-                    {/* Konten di atas overlay */}
-                    <div className="w-full relative z-10 py-[24px] md:py-[20px] flex flex-col items-start text-left px-5 md:px-10  justify-center">
-                        <h2 className="text-[24px] md:text-[48px] font-semibold mb-3 max-w-[240px] md:max-w-[900px] leading-snug">
-                            <span className="block md:hidden justify-left">
-                                Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.
-                            </span>
+            <RatingStars rating={4.5} reviewCount={120} className="mb-4" />
+          </div>
+        </div>
 
-                            <span className="hidden md:inline"
+        <div className="block md:hidden ">
+          <div className="flex flex-col gap-4">
+            <CourseDescription />
+            <CoursePromoBanner isBanner={true} />
+          </div>
+          <div>
+            <TutorProfile />
+          </div>
+        </div>
 
-                            >
-
-                                Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.
-
-                            </span>
-                        </h2>
-
-                        <p className="text-white text-[14px] md:text-[16px] mb-6">
-                            Belajar bersama tutor profesional di Video Course.
-                            Kapanpun, di manapun.
-                        </p>
-
-                        <RatingStars rating={4.5} reviewCount={120} className="mb-4" />
-
-
-                    </div>
-                </div>
-                <div className="flex gap-6 w-full lg:flex-row-reverse flex-col md:items-start md:order-2 items-center">
+        <div className="hidden md:block">
+          <div className="flex flex-row gap-6 ">
+            <div className="basis-3/4">
+              <CourseDescription />
+              <TutorProfile />
+            </div>
+            <div>
+              <CoursePromoBanner isBanner={true} />
+            </div>
+          </div>
+        </div>
+        {/* <div className="flex gap-6 w-full lg:flex-row-reverse flex-col md:items-start md:order-2 items-center">
 
                     <CoursePromoBanner />
                     <div>
@@ -67,10 +80,10 @@ const DetailProduct = () => {
                     </div>
 
 
-                </div>
-            </div>
-        </div>
-    );
+                </div> */}
+      </div>
+    </div>
+  );
 };
 
 export default DetailProduct;
