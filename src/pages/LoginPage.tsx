@@ -14,7 +14,6 @@ const LoginPage: React.FC<AuthCardProps> = ({
   heading,
   subheading,
   mode,
-  onSubmit,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
