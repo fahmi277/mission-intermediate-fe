@@ -22,7 +22,7 @@ const FooterContent = () => {
                 {/* Kolom 1: Brand */}
                 <div className="flex flex-col items-start">
                     <img
-                        src="../src/assets/logo.png"
+                        src="logo.png"
                         alt="Videobelajar Logo"
                         className="h-[42px] w-[152px] md:h-[56px] md:w-[237px]"
                     />
