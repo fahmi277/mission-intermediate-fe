@@ -4,10 +4,9 @@ import CoursePromoBanner from "../components/molecules/CoursePromoBanner";
 import OrderSummaryCard from "../components/molecules/OrderSummary";
 import FooterContent from "../components/molecules/FooterContent";
 import HeaderDashboard from "../components/HeaderDashboard";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const MethodePaymentPage = () => {
-  const navigate = useNavigate();
   return (
     <div className=" px-4 ">
       <HeaderDashboard />

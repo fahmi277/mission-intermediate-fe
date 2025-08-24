@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SortDropdown from "./SortDropDown";
 import { Search } from "lucide-react";
 

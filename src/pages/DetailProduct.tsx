@@ -1,5 +1,4 @@
 import HeaderDashboard from "../components/HeaderDashboard";
-import { useNavigate } from "react-router-dom";
 // import React from "react";
 import Breadcrumb from "../components/molecules/Breadcrumb";
 // import BannerCard from "../components/molecules/BannerCard";
@@ -9,7 +8,6 @@ import CourseDescription from "../components/molecules/CourseDescription";
 import TutorProfile from "../components/molecules/TutorProfile";
 
 const DetailProduct = () => {
-  const navigate = useNavigate();
   return (
     <div>
       <HeaderDashboard />

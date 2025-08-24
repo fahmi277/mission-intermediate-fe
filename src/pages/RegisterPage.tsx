@@ -14,7 +14,6 @@ const RegisterPage: React.FC<AuthCardProps> = ({
   heading,
   subheading,
   mode,
-  onSubmit,
 }) => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +25,7 @@ const RegisterPage: React.FC<AuthCardProps> = ({
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
+//   const [address, setAddress] = useState("");
   const [gender, setGender] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

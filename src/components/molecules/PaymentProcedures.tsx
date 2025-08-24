@@ -64,42 +64,6 @@ const AccordionItem: React.FC<{
   );
 };
 
-const CourseCard: React.FC = () => {
-  return (
-    <aside className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-      {/* Image */}
-      <div className="h-44 w-full bg-gradient-to-br from-gray-200 to-gray-300" aria-hidden />
-
-      <div className="p-5">
-        <h3 className="font-semibold text-gray-800 leading-snug">
-          Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.
-        </h3>
-
-        <div className="mt-2 flex items-center gap-3">
-          <span className="text-green-600 font-bold">Rp 250K</span>
-          <span className="text-gray-400 line-through">Rp 500K</span>
-          <span className="text-xs bg-yellow-100 text-yellow-700 rounded-full px-2 py-0.5">Diskon 50%</span>
-        </div>
-
-        <div className="mt-4 space-y-2 text-sm">
-          <div className="font-semibold text-gray-800">Kelas Ini Sudah Termasuk</div>
-          <ul className="grid grid-cols-2 gap-2 text-gray-600">
-            <li className="flex items-center gap-2"><span>📝</span>Ujian Akhir</li>
-            <li className="flex items-center gap-2"><span>🎬</span>49 Video</li>
-            <li className="flex items-center gap-2"><span>📄</span>7 Dokumen</li>
-            <li className="flex items-center gap-2"><span>🎓</span>Sertifikat</li>
-            <li className="flex items-center gap-2"><span>✅</span>Pretest</li>
-          </ul>
-        </div>
-
-        <div className="mt-4 text-sm">
-          <div className="font-semibold text-gray-800">Bahasa Pengantar</div>
-          <div className="mt-1 text-gray-600 flex items-center gap-2">🌐 Bahasa Indonesia</div>
-        </div>
-      </div>
-    </aside>
-  );
-};
 
 const BannerTimer: React.FC<{ seconds: number }> = ({ seconds }) => {
   const hh = String(Math.floor(seconds / 3600)).padStart(2, "0");
@@ -115,80 +79,6 @@ const BannerTimer: React.FC<{ seconds: number }> = ({ seconds }) => {
   );
 };
 
-const VABox: React.FC<{ bank: string; va: string }> = ({ bank, va }) => {
-  const [copied, setCopied] = useState(false);
-  const value = useMemo(() => chunkVA(va), [va]);
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(va.replace(/\s/g, ""));
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1600);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 flex items-center gap-4">
-      {/* Minimal bank mark */}
-      <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-50 border border-blue-200">
-        <span className="text-blue-700 font-bold">{bank}</span>
-      </div>
-      <div className="flex-1">
-        <div className="text-gray-800 font-medium">Bayar Melalui Virtual Account {bank}</div>
-        <div className="mt-1 text-gray-600 flex items-center gap-3">
-          <span className="font-mono tracking-wider">{value}</span>
-          <button
-            onClick={copy}
-            className="text-green-600 hover:text-green-700 text-sm font-semibold"
-          >
-            {copied ? "Disalin!" : "Salin"}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const PaymentSummary: React.FC = () => {
-  const price = 767_500;
-  const admin = 7_000;
-  const total = price + admin;
-
-  return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5">
-      <h3 className="font-semibold text-gray-800">Ringkasan Pesanan</h3>
-
-      <div className="mt-4 space-y-3 text-sm">
-        <div className="flex items-start justify-between gap-4">
-          <div className="text-gray-600 leading-snug">
-            <div className="font-medium text-gray-800">Video Learning: Gapai Karier Impianmu sebagai Seorang UI/UX Designer & Product Manager.</div>
-          </div>
-          <div className="text-gray-700 whitespace-nowrap">{formatIDR(price)}</div>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-gray-600">Biaya Admin</span>
-          <span className="text-gray-700">{formatIDR(admin)}</span>
-        </div>
-      </div>
-
-      <div className="mt-4 border-t border-dashed border-gray-200 pt-4 flex items-center justify-between">
-        <span className="font-semibold text-gray-800">Total Pembayaran</span>
-        <span className="font-extrabold text-green-600">{formatIDR(total)}</span>
-      </div>
-
-      <div className="mt-4 flex flex-col sm:flex-row gap-3">
-        <button className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50">
-          Ganti Metode Pembayaran
-        </button>
-        <button className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-green-600 text-white hover:bg-green-700 shadow-sm">
-          Bayar Sekarang
-        </button>
-      </div>
-    </div>
-  );
-};
 
 const HowToPay: React.FC = () => {
   return (
@@ -224,36 +114,10 @@ const HowToPay: React.FC = () => {
   );
 };
 
-const Header: React.FC<{ seconds: number }>= ({ seconds }) => {
-  return (
-    <header className="sticky top-0 z-10 bg-white/80 backdrop-blur border-b border-gray-100">
-      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2 select-none">
-          <span className="text-xl font-extrabold text-gray-900">video</span>
-          <span className="text-xl font-extrabold text-orange-500">belajar</span>
-        </div>
-
-        {/* Steps */}
-        <div className="hidden md:flex items-center gap-4">
-          <StepDot state="done" label="Pilih Metode" />
-          <div className="h-px w-8 bg-gray-200" />
-          <StepDot state="active" label="Bayar" />
-          <div className="h-px w-8 bg-gray-200" />
-          <StepDot state="todo" label="Selesai" />
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-6xl px-4 pb-3">
-        <BannerTimer seconds={seconds} />
-      </div>
-    </header>
-  );
-};
 
 const PaymentProcedures: React.FC = () => {
   // 00:50:55 => 3055 seconds
-  const [seconds, setSeconds] = useState(50 * 60 + 55);
+  const [, setSeconds] = useState(50 * 60 + 55);
 
   useEffect(() => {
     const t = setInterval(() => setSeconds((s) => (s > 0 ? s - 1 : 0)), 1000);

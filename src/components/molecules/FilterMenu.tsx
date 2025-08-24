@@ -1,4 +1,4 @@
-import { Book, Clock, ChevronDown, ChevronUp, Wallet, Search } from "lucide-react";
+import { Book, Clock, ChevronDown, ChevronUp, Wallet } from "lucide-react";
 import { useState } from "react";
 
 
